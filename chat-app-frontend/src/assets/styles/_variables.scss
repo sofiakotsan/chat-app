@@ -1,0 +1,29 @@
+// Colors
+$light_beige: #FCFBFA;
+$medium_beige: #FBF8F1;
+$dark_beige: #E9DAC1;
+$dark_brown: #302C24;
+$user_colors: (
+    orange: #FF5403, 
+    yellow: #F09E00, 
+    green: #54B435, 
+    blue: #54BAB9, 
+    purple: #3F0071, 
+    pink: #FB2576, 
+);
+
+// Shadows
+$big_shadow: 1px 1px 20px rgba(0, 0, 0, 0.08);
+$small_shadow: 1px 1px 7px rgba(0, 0, 0, 0.09);
+$small_shadow_inset: inset -1px -1px 10px rgba(0, 0, 0, 0.05);
+
+// Borders
+$big_border_radius: 10px;
+$small_border_radius: 5px;
+
+// Sizes
+$container_height: 80vh;
+$min_container_height: 300px;
+$container_paddings: 40px;
+$msg_input_height: 2.5rem;
+

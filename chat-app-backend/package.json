@@ -1,0 +1,13 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "homepage": ".",
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "3.0.1",
+    "ws": "*"
+  }
+}

@@ -1,0 +1,29 @@
+@use 'variables' as *;
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: $medium_beige;
+    overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: $dark_brown;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.section-bg {
+    background-color: $light_beige;
+    border-radius: 5px;
+    box-shadow: $small_shadow_inset;
+}
+
+.os-scrollbar.os-scrollbar-vertical {
+    margin: 25px 5px ;
+}
+
+.os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
+    background: rgba(48, 44, 36, 0.35);
+}

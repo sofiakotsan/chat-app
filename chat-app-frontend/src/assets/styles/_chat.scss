@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.chat-container {
+    background-color: white;
+    box-sizing: border-box;
+    box-shadow: $big_shadow;
+    border-radius: $big_border_radius;
+    padding: 40px;
+    width: calc(100% - 40px);
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 10vh;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-gap: 30px;
+}

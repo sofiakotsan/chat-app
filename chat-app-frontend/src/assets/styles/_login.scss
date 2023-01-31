@@ -1,0 +1,52 @@
+@use 'variables' as *;
+@use 'messages' as *;
+
+.login {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+
+    h2 {
+        color: $dark_brown;
+        text-align: center;
+        margin: 0;
+    }
+
+    p {
+        margin: 0.7em 0 2em;
+    }
+    
+    &-form {
+        @extend .message-form !optional;
+
+        &-wrap {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        &-input {
+            @extend .message-form-input !optional;
+        }
+
+        &-submit {
+            @extend .message-form-submit !optional;
+        }
+
+        &-error {
+            margin: 7px 0;
+        }
+
+        &-errors {
+            background: rgba(240, 0, 0, 0.15);
+            color: red;
+            opacity: 0.6;
+            border-radius: $small_border_radius;
+            padding: 8px 15px;
+            margin-top: 20px;
+        }
+    }
+}

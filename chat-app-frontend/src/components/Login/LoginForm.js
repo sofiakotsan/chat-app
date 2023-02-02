@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ReactComponent as SendIcon } from "../../assets/svg/send-icon.svg";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import Loader from "../Loader/Loader";
 
 const LoginForm = ({login, errors, userName, ...props}) => {
     const [userNameInput, setUserNameInput] = useState( userName ? userName : '');
+    const [isLoggingIn, setLoggingIn] = useState('false');
 
     const onUserNameInputChange = (e) => {
         setUserNameInput(e.target.value);
@@ -11,21 +14,23 @@ const LoginForm = ({login, errors, userName, ...props}) => {
     const onLoginSubmit = (e) => {
         e.preventDefault();
         login(e.target.elements.userName.value.trim());
+        setLoggingIn('false')
         // setUserName('');
     }
 
+    useEffect(() => {
+        if(isLoggingIn) setLoggingIn(false);
+    }, [errors]);
+
     return (
-        <div className="login-form-wrap ">
-            <form className="login-form" onSubmit={onLoginSubmit}>
+        <div className="login-form-wrap">
+            <form className={"login-form" + (isLoggingIn ? " login-form--waiting" : "")} onSubmit={onLoginSubmit}>
                 <input className="login-form-input" name="userName" placeholder="Choose a username" value={userNameInput} onChange={onUserNameInputChange}/>
                 <button className="login-form-submit" type="submit">
                     <SendIcon/>
                 </button>
             </form>
-            { errors.length ? 
-            <div className="login-form-errors">
-                {errors.map(error => <div className="login-form-error">{error}</div>)}
-            </div> : null }
+            { isLoggingIn ? <Loader/> : errors.length ? <ErrorMessage messages={errors}/> : null }
         </div>
     );
 }

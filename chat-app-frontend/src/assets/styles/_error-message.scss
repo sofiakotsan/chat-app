@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+.error-message {
+    background: transparentize($error_red, 0.85);
+    color: $error_red;
+    opacity: 0.6;
+    border-radius: $small_border_radius;
+    padding: 8px 15px;
+    margin: 20px;
+
+
+    &-item {
+        margin: 7px 0;
+    }
+}

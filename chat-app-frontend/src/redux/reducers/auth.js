@@ -5,6 +5,8 @@ let initState = {
     userName: AuthApi.getUserName(),
     isAuth: false,
     errors: [],
+    isConnectingServer: true,
+    isConnectionOK: true,
 }
 
 const authReducer = (state = initState, action) => {
@@ -21,6 +23,18 @@ const authReducer = (state = initState, action) => {
             return {
                 ...state,
                 errors: action.payload.errors
+            }
+        case actionTypes.SERVER_CONNECTED:
+            return {
+                ...state,
+                isConnectingServer: false,
+                isConnectionOK: true,
+            }
+        case actionTypes.SERVER_CONNECTION_ERROR:
+            return {
+                ...state,
+                isConnectingServer: false,
+                isConnectionOK: false,
             }
         default: 
             return state;

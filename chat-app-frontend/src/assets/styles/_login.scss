@@ -19,6 +19,13 @@
     p {
         margin: 0.7em 0 2em;
     }
+
+    .error-message {
+        margin: 0;
+        margin-top: 20px;
+    }
+
+    
     
     &-form {
         @extend .message-form !optional;
@@ -26,6 +33,10 @@
         &-wrap {
             width: 100%;
             max-width: 500px;
+
+            .loader {
+                margin-inline: auto;
+            }
         }
 
         &-input {
@@ -34,19 +45,14 @@
 
         &-submit {
             @extend .message-form-submit !optional;
+            transition: 0.2s ease;
         }
 
-        &-error {
-            margin: 7px 0;
-        }
-
-        &-errors {
-            background: rgba(240, 0, 0, 0.15);
-            color: red;
-            opacity: 0.6;
-            border-radius: $small_border_radius;
-            padding: 8px 15px;
-            margin-top: 20px;
+        &--waiting {
+            .login-form-submit {
+                pointer-events: none;
+                opacity: 0.5;
+            }
         }
     }
 }

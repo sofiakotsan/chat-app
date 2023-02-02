@@ -7,16 +7,9 @@
         transition: 0.3s ease;
         padding: 30px;
         gap: 25px;
-        // animation: revealMobileMenu;
-        // animation-direction: reverse;
-        // animation-duration: 1s;
-        
 
         &--menu-open {
             grid-template-columns: 200px 1fr;
-            // animation: revealMobileMenu;
-            // animation-direction: normal;
-            // animation-duration: 1s;
 
             .users {
                 grid-template-columns: 1fr 45px;
@@ -37,19 +30,10 @@
 
             .users-list-wrap {
                 display: flex;
-                
-                // animation: slideRight;
-                // animation-duration: 0.3s ease;
-                // transition: 0.2s ease;
             }
 
             .search-form-wrap {
                 display: flex;
-                // grid-column: 1 / 2;
-                // order: -1;
-                // animation: slideRight;
-                // animation-duration: 0.3s ease;
-                // transition: 0.2s ease;
             }
         }
     }
@@ -61,12 +45,7 @@
     }
 
     .users {
-        // grid-template-columns: 0px 1fr;
-        // grid-template-rows: 1fr 0px;
-        // grid-auto-rows: 0;
-        // overflow: hidden;
-        // gap: 0;
-        // transition: 0.3s ease;
+
         &-menu {
             display: block;
             transition: 0.3s ease;
@@ -77,10 +56,6 @@
                 display: none;
                 grid-column: 1 / 3;
                 height: calc(80vh - 80px - 15px - 20px - 1.3rem);
-                // animation: slideRight;
-                // animation-duration: 0.3s;
-                // animation-direction: reverse;
-
             }
         }
     }
@@ -89,9 +64,6 @@
         &-form {
             &-wrap {
                 display: none;
-                // animation: slideRight;
-                // animation-duration: 0.3s;
-                // animation-direction: reverse;
             }
         }
     }

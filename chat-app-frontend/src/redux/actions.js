@@ -55,3 +55,15 @@ export const searchQueryChanged = (query) => {
         payload: {query}
     }
 }
+
+export const serverConnected = () => {
+    return {
+        type: actionTypes.SERVER_CONNECTED,
+    }
+}
+
+export const serverConnectionError = () => {
+    return {
+        type: actionTypes.SERVER_CONNECTION_ERROR,
+    }
+}

@@ -1,12 +1,16 @@
 import store from '../redux/store';
-import { authSuccess, userConnected, userDisconnected, newMessage, authError } from '../redux/actions';
+import { authSuccess, userConnected, userDisconnected, newMessage, authError, serverConnected, serverConnectionError } from '../redux/actions';
 
 export const ServerApi = (serverUrl) => {
 	const ws = new WebSocket(serverUrl)
-	const { dispatch } = store
+	const { dispatch } = store;
 
 	ws.onopen = () => {
-		// console.log('WS Open!')
+		dispatch(serverConnected());
+	}
+
+	ws.onerror = () => {
+		dispatch(serverConnectionError());
 	}
 
 	ws.onmessage = (message) => {

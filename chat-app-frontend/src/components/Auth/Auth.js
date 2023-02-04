@@ -19,8 +19,6 @@ function Auth({isAuth, userName, errors, serAuthErrors, isConnectingServer, isCo
         } else{
             serAuthErrors(checkUserNameResult.errors);
         }
-
-        console.log(userName)
     }
 
     useEffect(() => {

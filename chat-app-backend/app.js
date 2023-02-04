@@ -50,6 +50,9 @@ wss.on('connection', function (ws) {
 	
 				clientsData.push({userName: userName, color: userColor});
 			} else {
+				userName = '';
+				userColor = '';
+
 				ws.send(JSON.stringify({
 					type: 'authError',
 					data: {

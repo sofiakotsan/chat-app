@@ -5,12 +5,12 @@ import { userTagged, searchQueryChanged } from "../../redux/actions";
 import SearchForm from "../SearchForm/SearchForm";
 import UsersMobileMenu from "./UsersMobileMenu";
 
-const Users = ({users, searchedUsers, searchQuery, tagUser, changeSearchQuery, showMenu, setShowMenu, ...props}) => {
+const Users = ({users, searchedUsers, searchQuery, tagUser, changeSearchQuery, showMenu, setShowMenu, currentUser, ...props}) => {
     return (
             <div className='users'>
                 <SearchForm searchQuery={searchQuery} changeSearchQuery={changeSearchQuery}/>
                 <UsersMobileMenu showMenu={showMenu} setShowMenu={setShowMenu}/>
-                <UsersList users={ searchedUsers || users } tagUser={(userName) => { tagUser(userName); setShowMenu(false); }}/>
+                <UsersList users={ searchedUsers || users } currentUser={currentUser} tagUser={(userName) => { tagUser(userName); setShowMenu(false); }}/>
             </div>
     );
 }
@@ -20,6 +20,7 @@ const mapStateToProps = (state) => {
         users: state.usersReducer.users,
         searchQuery: state.usersReducer.searchQuery,
         searchedUsers: state.usersReducer.searchedUsers,
+        currentUser: state.authReducer.userName
     }
 }
 

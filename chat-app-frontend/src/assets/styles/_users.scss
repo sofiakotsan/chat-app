@@ -58,6 +58,10 @@
         &:after {
             border-radius: $small_border_radius
         }
+
+        &--current span::after {
+            content: ' (me)';
+        }
     }
 
     &-color {
